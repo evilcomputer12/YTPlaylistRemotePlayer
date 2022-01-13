@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script>
+       $("#button").click(function(){
+        formSubmit();
+        });
+       function formSubmit(){
+        var fname = document.getElementById("fname").value;
+        var dataString = 'fname='+ fname;
+   		jQuery.ajax({
+		url: "",
+		data: dataString,
+		type: "POST",
+		success:function(data){
+		$("#myForm").html(data);
+		},
+		error:function (){}
+		});
+  return true;
+}
+</script>
+</head>
+<body>
+<h2>Contact Form</h2>
+<form class="form" action="" method="post">
+    <p class="name">
+    <div id="myForm">
+        <input type="text" name="fname" id="fname" class="form-control input-lg" placeholder="Enter YouTube Video URL:"/>
+    </p>
+    </div>
+        <p class="submit" >
+            <button id="button" name="Send" value="Send" class="btn btn-primary btn-lg btn-block">Send YT PlayList/Video Id </button>
+        </p>
+</form>
+
+</body>
+
+</html>
+
